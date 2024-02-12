@@ -1,0 +1,22 @@
+﻿<Window x:Class="CharacterEditor.Pages.InventoryBtn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CharacterEditor.Pages"
+        mc:Ignorable="d"
+        Title="InventoryBtn" Height="400" ResizeMode="NoResize" Width="400" Closed="Window_Closed">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontSize="16">Тип оружия</TextBlock>
+            <ComboBox Margin="10" Height="25" Width="300" Name="TypesOfWeaponCb"/>
+            <TextBlock FontSize="16">Уровень оружия</TextBlock>
+            <ComboBox Margin="10" Height="25" Name="LvlWCb">
+                <ComboBoxItem>0</ComboBoxItem>
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="AddBtn" Click="AddBtn_Click">Добавить в инвентарь</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,107 @@
+﻿<Page x:Class="CharacterEditor.Pages.CharacterEditorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CharacterEditor.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CharacterEditorPage"  >
+
+    <Grid>
+        <StackPanel Visibility="Visible" Name="Stats1" VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Center" Background="#721ED760" Margin="30">
+            <StackPanel Margin="10">
+                <TextBlock TextAlignment="Center" Margin="10 10 10 10">Здоровье <LineBreak/></TextBlock>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 10 10"  Name="Health" Text="{Binding Health}"/>
+                    <TextBlock VerticalAlignment="Center">/</TextBlock>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 10 10"  Name="MHealth" Text="{Binding MHealth}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Margin="10 10 10 10">Мана <LineBreak/></TextBlock>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 10 10"  Name="Mana" Text="{Binding Mana}"/>
+                    <TextBlock VerticalAlignment="Center">/</TextBlock>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 10 10"  Name="MMana" Text="{Binding MMana}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock TextAlignment="Center" Margin="10 10 10 10">Физический <LineBreak/>урон</TextBlock>
+                <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 10 10"  Name="PDamage" Text="{Binding PDamage}"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock TextAlignment="Center" Margin="10 10 10 10">Защита<LineBreak/></TextBlock>
+                <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 10 10"  Name="Armor" Text="{Binding Armor}"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock TextAlignment="Center" Margin="10 10 10 10">Магический<LineBreak/>урон</TextBlock>
+                <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 10 10"  Name="MDamage" Text="{Binding MDamage}"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock TextAlignment="Center" Margin="10 10 10 10">Магическая<LineBreak/>защита</TextBlock>
+                <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 10 10"  Name="MDefence" Text="{Binding MDefence}"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Margin="10 10 10 10">Крит <LineBreak/> шанс/урон</TextBlock>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 0 10"  Name="CritChance" Text="{Binding CritChance}"/>
+                    <TextBlock VerticalAlignment="Center" Margin="0 0 10 0">%</TextBlock>
+                    <TextBlock VerticalAlignment="Center">/</TextBlock>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center" Margin="10 10 0 10"  Name="CritDamage" Text="{Binding CritDamage}"/>
+                    <TextBlock VerticalAlignment="Center">%</TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <Border  Name="Stats2" Visibility="Visible" Margin="30" VerticalAlignment="Center" HorizontalAlignment="Left"  BorderBrush="Black" BorderThickness="2">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFEEEEF2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  VerticalAlignment="Center" Margin="10 10 10 10" >Имя:</TextBlock>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="10 10 10 10"  Name="CName" Text="{Binding Name}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="10 10 10 10" >Тип персонажа:</TextBlock>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="10 10 10 10"  Name="Character" Text="{Binding Character}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="10 10 10 10" >Уровень:</TextBlock>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="10 10 10 10"  Name="CLevel" Text="{Binding Level}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="10 10 10 10" >Сила:</TextBlock>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="10 10 0 10"  Name="CStrength" Text="{Binding Strength}"/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="10 10 5 10"  Text=" / "/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="0 0 0 0"  Name="MCStrength" Text="{Binding MStrength}"/>
+                    <Button x:Name="IncreaseStrenght" Margin="10 10 10 10" Content="^" Background="#72E01C38" Width="25" Height="25" Foreground="White" FontStretch="Medium" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Click="IncreaseStrenght_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="10 10 10 10" >Ловкость:</TextBlock>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="10 10 0 10"  Name="CDexterity" Text="{Binding Dexterity}"/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="10 10 5 10"  Text=" / "/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="0 0 0 0"  Name="MCDexterity" Text="{Binding MDexterity}"/>
+                    <Button x:Name="IncreaseDexterity" Margin="10 10 10 10" Content="^" Background="#72E01C38" Width="25" Height="25" Foreground="White" FontStretch="Medium" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Click="IncreaseDexterity_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="10 10 10 10" >Интеллект:</TextBlock>
+                    <TextBlock FontSize="16" VerticalAlignment="Center"  Margin="10 10 0 10"  Name="CInteligence" Text="{Binding Inteligence}"/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="10 10 5 10"  Text=" / "/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center"  Margin="0 0 0 0"  Name="MCInteligence" Text="{Binding MInteligence}"/>
+                    <Button x:Name="IncreaseInteligence" Margin="10 10 10 10" Content="^" Background="#72E01C38" Width="25" Height="25" Foreground="White" FontStretch="Medium" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Click="IncreaseInteligence_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="10 10 10 10" >Живучесть:</TextBlock>
+                    <TextBlock FontSize="16" VerticalAlignment="Center"  Margin="10 10 0 10"  Name="CVitality" Text="{Binding Vitality}"/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" Margin="10 10 5 10"  Text=" / "/>
+                    <TextBlock FontSize="16" VerticalAlignment="Center"  Margin="0 0 0 0"  Name="MCVitality" Text="{Binding MVitality}"></TextBlock>
+                    <Button x:Name="IncreaseVitality" Margin="10 10 10 10" Content="^" Background="#72E01C38" Width="25" Height="25" Foreground="White" FontStretch="Medium" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Click="IncreaseVitality_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <StackPanel VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Center">
+            <TextBlock Margin="10" FontSize="16">Поменять оружие</TextBlock>
+            <ComboBox SelectionChanged="InventoryCb_SelectionChanged" Padding="5" Margin="0 0 0 10" Name="InventoryCb"></ComboBox>
+            <Button Padding="5" Name="AddNewWeaponPage" FontSize="16" Click="AddNewWeaponPage_Click">Добавить новое оружие</Button>
+        </StackPanel>
+    </Grid>
+</Page>
